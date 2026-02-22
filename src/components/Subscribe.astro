@@ -31,12 +31,12 @@ const { class: className } = Astro.props;
           {subscribe.text}
         </p>
       )}
-      {/* action={subscribe.formUrl} */}
       <form
-        data-netlify="true"
-        method="post"
-        id="subscribe-form"
         name="subscribe-form"
+        method="post"
+        data-netlify="true"
+        action={subscribe.formUrl}
+        id="subscribe-form"
         class="w-full max-w-xl flex flex-col gap-3.5 sm:flex-row"
         target="_blank"
       >
