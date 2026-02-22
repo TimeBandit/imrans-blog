@@ -1,6 +1,6 @@
 ---
-import Button from "./Button.astro";
 import siteConfig from "../site.config";
+import Button from "./Button.astro";
 
 const subscribe = siteConfig.subscribe;
 
@@ -31,8 +31,9 @@ const { class: className } = Astro.props;
           {subscribe.text}
         </p>
       )}
+      {/* action={subscribe.formUrl} */}
       <form
-        action={subscribe.formUrl}
+        data-netlify="true"
         method="post"
         id="subscribe-form"
         name="subscribe-form"

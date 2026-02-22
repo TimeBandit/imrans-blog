@@ -157,8 +157,8 @@ const siteConfig: SiteConfig = {
     text: "Hi! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:",
     email: {
       text: "Drop me an email and I’ll do my best to respond as soon as possible.",
-      href: "mailto:imran.nazir@yahoo.com",
-      email: "imran.nazir at yahoo.com"
+      href: "mailto:support@pink-llama.dev",
+      email: "support at pink-llama.dev"
     },
     socialProfiles: [
       {
