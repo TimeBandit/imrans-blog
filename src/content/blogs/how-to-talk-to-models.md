@@ -1,10 +1,10 @@
 ---
-title: How to Talk to Models
+title: How to Talk to Large Language Models (LLMs)
 author: "Imran Nazir"
-description: How to Talk to Models
+description: How to Talk to Large Language Models (LLMs)
 image:
   url: "../../assets/images/how-to-talk-to-models.svg"
-  alt: A stylised HTMX logo graphic
+  alt: A shape
 pubDate: 2025-04-06
 tags: [llms, ai, machine-learning]
 ---
