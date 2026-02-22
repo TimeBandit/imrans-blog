@@ -3,7 +3,7 @@ title: A Week Away in Spain
 author: "Imran Nazir"
 description: A Week Away in Spain
 image:
-  url: "../../assets/images/20080518-a-week-away-1.JPG"
+  url: "../../assets/images/a-week-in-spain.svg"
   alt: "A Week Away in Spain"
 pubDate: 2008-05-18
 tags: [travel]
@@ -17,7 +17,7 @@ One of the idiosyncrasies of the new airport security regulations is that you ca
 
 Did you know, that statistically air travel is supposed to be the safest way to go from A to B. To me though, it also means, fly more and you increase your chances of being on that plane that doesn’t make it. I know, this could even happen in a car, the problem is that in a plane you hand over your safety to another driver; the anonymous pilot, it a matter of trust. Every bit of noise or air turbulence made me wince and curl up, so chatting to the lady across the aisle form me (Anna) helped me to chill out. We blabbered for nearly and hour and she even gave me one of her babies to hold while she cleaned up the puke of the other.
 
-![Parked Car](/images/20080518-a-week-away-2.JPG)
+![Parked Car](../../assets/images/20080518-a-week-away-2.JPG)
 
 At this time of the year the weather in Sardinia isn’t that different from a warm day sunny day this time of year in the south of England. The differences are the lower humidity, the lack of that constant noise of traffic somewhere and a sweet smell to the air due to perhaps the flowering of native plants and the sea air. The land appears semi arid and populated with both coniferous and deciduous trees and prickly pears, whose fruit I am told you can eat.
 

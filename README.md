@@ -101,3 +101,12 @@ You'll see the following folders and files:
 ## License
 
 [GNU GPL v3](/LICENSE)
+
+# Updating
+
+Use this base colour for assets: 
+#FEC76A
+#FFA3AF
+#007CBE
+#00AF54 green
+#A03E99 fushia

@@ -3,7 +3,7 @@ title: HTMX in 100 Words
 author: "Imran Nazir"
 description: HTMX in one hundred words
 image:
-  url: "../../assets/images/htmx-in-100-words.png"
+  url: "../../assets/images/htmx-in-100-words.svg"
   alt: A stylised HTMX logo graphic
 pubDate: 2025-03-12
 tags: [tech, framework, htmx]

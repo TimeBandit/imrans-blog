@@ -183,7 +183,7 @@ const siteConfig: SiteConfig = {
   blog: {
     description: "Read about my adventures, thoughts and explorations."
   },
-  postsPerPage: 2,
+  postsPerPage: 6,
   recentPostLimit: 3
 };
 

@@ -3,7 +3,7 @@ title: How to Talk to Models
 author: "Imran Nazir"
 description: How to Talk to Models
 image:
-  url: "../../assets/images/how-to-talk-to-models.png"
+  url: "../../assets/images/how-to-talk-to-models.svg"
   alt: A stylised HTMX logo graphic
 pubDate: 2025-04-06
 tags: [llms, ai, machine-learning]

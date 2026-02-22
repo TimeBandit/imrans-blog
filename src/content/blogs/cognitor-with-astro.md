@@ -3,7 +3,7 @@ title: How to Use AWS Cognito in Your Next Astro Project
 author: "Imran Nazir"
 description: An overview of using AWS Cognito with you Astro app.
 image:
-  url: "../../assets/images/cognito-in-astro.png"
+  url: "../../assets/images/cognito-in-astro.svg"
   alt: A stylised HTMX logo graphic
 pubDate: 2025-03-16
 tags: [tech, framework, astro]
