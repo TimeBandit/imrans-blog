@@ -9,7 +9,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://your-site-name.netlify.app", // Update with your actual Netlify URL
+  site: "https://www.imran-nazir.com", // Update with your actual Netlify URL
   // base: "/space-ahead", // Only needed for GitHub Pages subdirectory deployment
 
   integrations: [
