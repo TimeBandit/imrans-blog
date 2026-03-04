@@ -1,18 +1,12 @@
 ---
 title: Building a Pay-as-You-Go Billing System with Stripe and Firestore
 author: "Imran Nazir"
-description: Building a Pay-as-You-Go Billing System with Stripe and Firestore
+description: How to implement credit-based billing that charges users only for what they consume
 image:
   url: "A shape"
   alt: A stylised graphic
 pubDate: 2026-03-04
 tags: [stripe, firestore, backend]
----
-
-# Building a Pay-as-You-Go Billing System with Stripe and Firestore
-
-*How to implement credit-based billing that charges users only for what they consume*
-
 ---
 
 Building a billing system that charges users based on actual usage rather than fixed subscriptions can be challenging. Here's how I built a robust **pay-as-you-go system** using Stripe and Firestore for a voice transcription service that charges $0.20 per minute of speech.
