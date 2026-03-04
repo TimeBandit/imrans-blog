@@ -18,6 +18,7 @@ Traditional subscription models don't work well for usage-based services. Users 
 ## Architecture Overview
 
 The system works in two phases:
+
 1. **Credit Purchase**: Users buy credits upfront via Stripe Checkout
 2. **Real-time Deduction**: Credits are deducted as services are consumed
 
@@ -195,8 +196,6 @@ await fetch('/api/billing/deduct', {
 - Implement rate limiting on deduction endpoints
 - Monitor failed transactions and set up alerts
 - Test thoroughly with Stripe's test mode
-
-This system has processed over 10,000 transactions with 99.9% reliability. The key is using database transactions for atomic updates and proper webhook handling for seamless credit top-ups.
 
 ---
 
