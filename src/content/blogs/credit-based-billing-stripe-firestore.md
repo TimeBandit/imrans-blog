@@ -3,7 +3,7 @@ title: Building a Pay-as-You-Go Billing System with Stripe and Firestore
 author: "Imran Nazir"
 description: How to implement credit-based billing that charges users only for what they consume
 image:
-  url: "A shape"
+  url: "../../assets/images/credit-based-billing-stripe-firestore.svg"
   alt: A stylised graphic
 pubDate: 2026-03-04
 tags: [stripe, firestore, backend]
