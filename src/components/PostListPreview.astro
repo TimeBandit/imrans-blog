@@ -12,12 +12,11 @@ const { title, pubDate, description, tags = [] } = post.data;
 ---
 
 <p>
-  <!-- todo: correct the for and id -->
   <a href={withBase("/blog/" + post.id)}>
     {title}
   </a>
-  <label for="mn-demo" class="margin-toggle">&#8853;</label>
-  <input type="checkbox" id="mn-demo" class="margin-toggle"/>
+  <label for={post.id} class="margin-toggle">&#8853;</label>
+  <input type="checkbox" id={post.id} class="margin-toggle"/>
   <span class="marginnote">
     <FormattedDate date={new Date(pubDate)} />
     <br />
