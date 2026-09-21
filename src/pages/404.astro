@@ -1,10 +1,7 @@
 ---
-import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
-import { withBase } from "../utils/helpers";
-import heroImage from "../assets/images/pixeltrue-space-discovery.svg";
-import SpaceKeyboard from "../components/SpaceKeyboard.astro";
 import siteConfig from "../site.config";
+import { withBase } from "../utils/helpers";
 ---
 
 <MainLayout
@@ -12,22 +9,12 @@ import siteConfig from "../site.config";
   pageTitle={siteConfig.title + " | 404"}
   showSubscribeForm={false}
 >
-  <div class="flex flex-col items-center justify-center page-content">
-    <h1 class="sigmar-ff">404</h1>
-    <Image
-      class="cover-img"
-      src={heroImage}
-      alt={"Astronaut in space"}
-      width={400}
-      height={300}
-    />
-    <p>🧑‍🚀: Houston, we have a problem.</p>
+  <div>
+    <span aria-hidden="true"></span>
+    <h1>404</h1>
+    <p>That page doesn't exist.</p>
     <p>
-      We couldn't find that link. Verify the address or <a
-        class="font-medium underline"
-        href={withBase("/")}>Go Back Home</a
-      >
+      <a href={withBase("/")}>← Go back home</a>
     </p>
-    <SpaceKeyboard />
   </div>
 </MainLayout>

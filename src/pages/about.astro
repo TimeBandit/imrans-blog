@@ -5,20 +5,21 @@ import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
 ---
 
-<MainLayout activePage="about" pageTitle={siteConfig.title + " | About"}>
-  <div class="page-content">
-    <h1 class="sigmar-ff text-balance">{siteConfig.about?.title}</h1>
+<MainLayout
+  activePage="about"
+  pageTitle={siteConfig.title + " | About"}
+>
+  <section>
+    <span aria-hidden="true"></span>
+    <h1>{siteConfig.about?.title}</h1>
+    <p class="subtitle">It's me!</p>
     <Image
-      width={1024}
-      height={600}
-      loading="eager"
-      layout="constrained"
-      class="rounded-4xl mb-8 mx-auto"
       src={coverImage}
-      alt="An Astronaut walking on a terrain"
+      alt="Imran Nazir"
+      width={800}
+      height={500}
+      loading="eager"
     />
-    <p class="kanit-light text-left">
-      {siteConfig.about?.text}
-    </p>
-  </div>
+    <p>{siteConfig.about?.text}</p>
+  </section>
 </MainLayout>

@@ -1,35 +1,59 @@
 ---
-import IconButton from "./IconButton.astro";
-import ArrowLeft from "../icons/ArrowLeft.astro";
-import ArrowRight from "../icons/ArrowRight.astro";
-
-const { page, class: className } = Astro.props;
+const { page } = Astro.props;
 ---
-
-<nav
-  aria-label="Pagination"
-  class:list={[
-    "p-4 flex items-center sm:justify-center gap-8 min-w-full",
-    className,
-  ]}
->
-  <IconButton
-    class="disabled:fill-gray-500 disabled:hover:cursor-not-allowed disabled:hover:text-gray-500!"
-    href={page.url.prev}
-    aria-label={`Go to page ${page.currentPage - 1} of ${page.lastPage}`}
-    disabled={!page.url.prev}
-  >
-    <ArrowLeft class="w-5 h-5 fill-current" />
-  </IconButton>
-  <span class="text-sm" aria-current="page"
-    >Page {page.currentPage} of {page.lastPage}</span
-  >
-  <IconButton
-    class="disabled:fill-gray-500 disabled:hover:cursor-not-allowed disabled:hover:text-gray-500!"
-    href={page.url.next}
-    aria-label={`Go to page ${page.currentPage + 1} of ${page.lastPage}`}
-    disabled={!page.url.next}
-  >
-    <ArrowRight class="w-5 h-5 fill-current" />
-  </IconButton>
+<nav aria-label="Pagination">
+    <span class="page-info">Page {page.currentPage} of {page.lastPage}</span>
+    <ul class="page-links">
+      {
+      page.url.prev ? (<li>
+          <a href={page.url.prev} class="page-prev" aria-label={`Page {page.currentPage - 1}`}>
+            ← Prev
+          </a>
+        </li>) : null
+      }
+      
+      { 
+      page.url.next ? (<li>
+          <a href={page.url.next} class="page-next" aria-label={`Page {page.currentPage + 1}`}>
+              Next →
+          </a>
+        </li>) : null}
+    </ul>
 </nav>
+
+<style>
+  /* Container for pagination */
+nav[aria-label="Pagination"] {
+  
+  margin: 2em 0; /* Generous spacing, Tufte style */
+  font-size: 0.95em; /* Slightly smaller than body text */
+  color: #111111; /* Tufte's off-black */
+  font-family: "ETBook", "Palatino", "Georgia", serif; /* Tufte font stack */
+}
+
+/* Page info (e.g., "Page 1 of 2") */
+.page-info {
+  font-style: italic; /* Subtle emphasis for meta-info */
+  margin-right: 1.5em;
+}
+
+/* Link list */
+.page-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75em; /* Small gap between links */
+}
+
+/* Individual links */
+.page-links a {
+  text-decoration: underline; /* Tufte standard: underlined links */
+  color: inherit; /* Match body text color */
+  transition: opacity 0.2s ease; /* Smooth hover */
+}
+
+.page-links a:hover,
+.page-links a:focus {
+  opacity: 0.7; /* Soften on hover,
+</style>

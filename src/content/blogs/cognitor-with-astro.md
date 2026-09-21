@@ -1,5 +1,5 @@
 ---
-title: How to Use AWS Cognito in Your Next Astro Project
+title: Use AWS Cognito in Astro
 author: "Imran Nazir"
 description: An overview of using AWS Cognito with you Astro app.
 image:

@@ -54,6 +54,7 @@ export type SiteConfig = {
   title: string;
   description: string;
   image?: Image;
+  navLinks?: Link[];
   headerNavLinks?: Link[];
   footerNavLinks?: Link[];
   socialLinks?: Link[];
@@ -70,11 +71,32 @@ export type SiteConfig = {
 const siteConfig: SiteConfig = {
   website: 'https://imran-nazir.com',
   title: 'Imran Nazir',
-  description: 'My corner of the web',
+  description: "I write about my adventures, thoughts and explorations.",
   image: {
     src: '/space-ahead-preview.jpeg',
     alt: 'Space Ahead ✨ - A minimal space-inspired personal blog template, created by Siddhesh Thadeshwar.'
   },
+  navLinks: [
+    {
+      text: 'Home',
+      href: withBase('/')
+    },
+    {
+      text: 'Blog',
+      href: withBase('/blog')
+    },
+    {
+      text: 'Tags',
+      href: withBase('/tags')
+    },
+    {
+      text: 'About',
+      href: withBase('/about')
+    },
+    {
+      text: 'Contact',
+      href: withBase('/contact')
+    }],
   headerNavLinks: [
     {
       text: 'Home',
@@ -98,6 +120,18 @@ const siteConfig: SiteConfig = {
     }
   ],
   footerNavLinks: [
+    {
+      text: 'Home',
+      href: withBase('/')
+    },
+    {
+      text: 'Blog',
+      href: withBase('/blog')
+    },
+    {
+      text: 'Tags',
+      href: withBase('/tags')
+    },
     {
       text: 'About',
       href: withBase('/about')
@@ -132,7 +166,7 @@ const siteConfig: SiteConfig = {
   hero: {
     eyebrowText: '',
     title: 'My Corner of the Web',
-    text: "Written by Imran Nazir.",
+    text: "Written by Imran Nazir, a Web Developer. I write about my adventures, thoughts and explorations.",
     image: {
       src: '/assets/images/dddynamite.svg',
       alt: 'A person sitting at a desk in front of a computer'
@@ -154,7 +188,7 @@ const siteConfig: SiteConfig = {
   },
   contactInfo: {
     title: 'Contact',
-    text: "Hi! Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:",
+    text: "Whether you have a question, a suggestion, or just want to share your thoughts, I'm all ears. Feel free to get in touch through any of the methods below:",
     email: {
       text: "Drop me an email and I’ll do my best to respond as soon as possible.",
       href: "mailto:imran.nazir@yahoo.com",
@@ -183,8 +217,8 @@ const siteConfig: SiteConfig = {
   blog: {
     description: "Read about my adventures, thoughts and explorations."
   },
-  postsPerPage: 2,
-  recentPostLimit: 3
+  postsPerPage: 10,
+  recentPostLimit: 2
 };
 
 export default siteConfig;

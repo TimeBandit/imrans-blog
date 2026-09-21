@@ -1,0 +1,15 @@
+---
+// Props (optional) – you can expose a `cite` attribute if you want the author
+export interface Props {
+  cite?: string;       // e.g. "Natsume Soseki, The Three‑Cornered World."
+}
+const { cite } = Astro.props;
+---
+<div class="epigraph">
+  <blockquote>
+    <slot />   <!-- content placed between <Quote> tags -->
+    {cite && (
+      <footer>{cite}</footer>
+    )}
+  </blockquote>
+</div>

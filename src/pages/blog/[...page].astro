@@ -1,37 +1,41 @@
 ---
 import type { GetStaticPathsOptions, Page } from "astro";
 import { type CollectionEntry, getCollection } from "astro:content";
-import Pagination from "../../components/Pagination.astro";
-import { sortItemsByDateDesc } from "../../utils/helpers";
 import MainLayout from "../../layouts/MainLayout.astro";
+import PostListPreview from "../../components/PostListPreview.astro";
+import Pagination from "../../components/Pagination.astro";
 import siteConfig from "../../site.config";
-import PostCardPreview from "../../components/PostCardPreview.astro";
+import { sortItemsByDateDesc } from "../../utils/helpers";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const blogs = (await getCollection("blogs")).sort(sortItemsByDateDesc);
-  return paginate(blogs, { pageSize: siteConfig.postsPerPage || 2 });
+  const posts = (await getCollection("blogs"))
+    .filter((p) => !p.data.draft)
+    .sort(sortItemsByDateDesc);
+  return paginate(posts, { pageSize: siteConfig.postsPerPage || 5 });
 }
 
 type Props = { page: Page<CollectionEntry<"blogs">> };
-
 const { page } = Astro.props;
-const allPosts = page.data;
 ---
 
-<MainLayout activePage="blog" pageTitle={siteConfig.title + " | Blog Archive"}>
-  <div class="page-content py-8 text-center">
-    <h1 class="sigmar-ff">Blog</h1>
-    {
-      siteConfig.blog?.description && (
-        <p class="font-light text-balance">{siteConfig.blog?.description}</p>
-      )
-    }
+<MainLayout
+  activePage="blog"
+  pageTitle={siteConfig.title + " | Blog"}
+  description={siteConfig.blog?.description}
+>
+<section>
+    <span aria-hidden="true"></span>
+    <h1>Blog</h1>
+    <p class="subtitle">{siteConfig.blog?.description}</p>
+</section>
+  
+<section>
+  {page.data.map((post) => <PostListPreview post={post} />)}
+</section>
 
-    <div
-      class="flex flex-col text-left gap-8 mb-4 text-sm sm:text-base max-w-fit mx-auto"
-    >
-      {allPosts.map((post) => <PostCardPreview post={post} />)}
-    </div>
-    <Pagination page={page} class="mb-16 sm:mb-24" />
-  </div>
+<section>
+  <p>
+    {page.lastPage > 1 && <Pagination page={page} />}
+  </p>
+</section>
 </MainLayout>

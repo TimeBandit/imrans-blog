@@ -1,5 +1,5 @@
 ---
-title: HTMX in 100 Words
+title: Learn HTMX in 100 Words
 author: "Imran Nazir"
 description: HTMX in one hundred words
 image:

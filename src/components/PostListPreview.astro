@@ -1,32 +1,44 @@
 ---
-import { type CollectionEntry } from "astro:content";
-import ArrowRight from "../icons/ArrowRight.astro";
-import FormattedDate from "./FormattedDate.astro";
+import type { CollectionEntry } from "astro:content";
 import { withBase } from "../utils/helpers";
+import FormattedDate from "./FormattedDate.astro";
 
 type Props = {
   post: CollectionEntry<"blogs">;
-  class?: string;
-  headingLevel?: "h2" | "h3";
 };
 
-const { post, class: className, headingLevel = "h2" } = Astro.props;
-const { title, pubDate, description } = post.data;
-const TitleTag = headingLevel;
+const { post } = Astro.props;
+const { title, pubDate, description, tags = [] } = post.data;
 ---
 
-<a
-  class:list={["flex justify-between items-start gap-8 group", className]}
-  href={withBase("/blog/" + post.id)}
->
-  <div class="grow">
-    <TitleTag class="sigmar-ff">{title}</TitleTag>
-    <FormattedDate date={pubDate} />
-    {description && <p>{description}</p>}
-  </div>
-  <div
-    class="hidden opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-4 sm:items-center sm:self-center sm:shrink-0"
-  >
-    Read Post <ArrowRight class="fill-current w-4 h-4" />
-  </div>
-</a>
+<p>
+  <!-- todo: correct the for and id -->
+  <a href={withBase("/blog/" + post.id)}>
+    {title}
+  </a>
+  <label for="mn-demo" class="margin-toggle">&#8853;</label>
+  <input type="checkbox" id="mn-demo" class="margin-toggle"/>
+  <span class="marginnote">
+    <FormattedDate date={new Date(pubDate)} />
+    <br />
+  {tags.map((tag, index) => (
+    <>
+      <a href={`/tags/${tag.toLowerCase()}`} class="tag-link">{tag}</a>
+      {index < tags.length - 1 && ', '}
+    </>
+  ))}
+  </span>
+</p>
+<style>
+  /* Reuse Tufte's margin note styling, just tweak the link */
+  .tag-link {
+    /* color: #111111; */
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    font-style: normal; /* Reset italic from marginnote if needed */
+  }
+  
+  .tag-link:hover {
+    text-decoration-color: #555;
+  }
+</style>

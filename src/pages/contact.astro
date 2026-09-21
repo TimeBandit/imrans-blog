@@ -1,46 +1,50 @@
 ---
-import { Image } from "astro:assets";
-import coverImage from "../assets/images/dddynamite.svg";
 import MainLayout from "../layouts/MainLayout.astro";
 import siteConfig from "../site.config";
+const contact = siteConfig.contactInfo;
 ---
 
-<MainLayout activePage="contact" pageTitle={siteConfig.title + " | Contact"}>
-  <div class="page-content">
-    <h1 class="sigmar-ff text-balance">{siteConfig.contactInfo?.title}</h1>
-    <Image
-      width={400}
-      height={300}
-      loading="eager"
-      layout="fixed"
-      class="rounded-4xl mb-8 mx-auto grayscale-75 saturate-200"
-      src={coverImage}
-      alt="Space envelop"
-    />
-    <div class="flex flex-col">
-      <!-- <Image width={1024} height={600} loading="eager" layout="constrained" class="rounded-4xl mb-8 mx-auto" src={coverImage} alt="An Astronaut walking on a terrain"/> -->
-      <p class="font-light text-left text-balance">
-        {siteConfig.contactInfo?.text}
-      </p>
-      <p class="font-light text-left">
-        {siteConfig.contactInfo?.email?.text}<br />
-        <a
-          href={siteConfig.contactInfo?.email?.href}
-          class="font-light text-left"
-        >
-          {siteConfig.contactInfo?.email?.email}
-        </a>
-      </p>
-      <p class="font-bold text-left flex flex-col sm:flex-row">
-        Social Profiles:
-        {
-          siteConfig.contactInfo?.socialProfiles?.map((profile) => (
-            <a href={profile.href} class="font-light text-left ml-4">
-              {profile.text}
-            </a>
-          ))
-        }
-      </p>
-    </div>
-  </div>
+<MainLayout
+  activePage="contact"
+  pageTitle={siteConfig.title + " | Contact"}
+>
+  <section>
+    <span aria-hidden="true"></span>
+    <h1>{contact?.title}</h1>
+    {contact?.text && <p>{contact.text}</p>}
+    {
+      contact?.socialProfiles && contact.socialProfiles.length > 0 && (
+        <ul>
+          {contact.socialProfiles.map((p) => (
+            <li>
+              <a href={p.href} target="_blank" rel="noopener noreferrer">
+                {p.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    <!-- {
+      contact?.email && (
+        <div>
+        </div>
+      )
+    } -->
+
+    <!-- {
+      contact?.socialProfiles && contact.socialProfiles.length > 0 && (
+        <div>
+          <span>Social</span>
+          <div>
+            {contact.socialProfiles.map((p) => (
+              <a href={p.href} target="_blank" rel="noopener noreferrer">
+                {p.text}
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    } -->
+  </section>
 </MainLayout>
