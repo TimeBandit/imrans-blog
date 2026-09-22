@@ -1,0 +1,141 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import siteConfig from "../../site.config";
+const contact = siteConfig.contactInfo;
+---
+
+<MainLayout
+  activePage="contact"
+  pageTitle={siteConfig.title + " | Date Imran"}
+>
+  <section>
+    <span aria-hidden="true"></span>
+    <h1>About Me</h1>
+    <p>
+      Hi, I'm Imran. I happen to be single at the moment. I want to find someone
+      but the apps are not for me. I came across this unual approach so here I am.
+     <!--  -->
+      <label for="dressed-smart" class="margin-toggle">&#8853;</label>
+      <input type="checkbox" id="dressed-smart" class="margin-toggle"/>
+      <span class="marginnote">
+        <img src="./dressed-smart.jpeg" alt="self portrait of Imran dressed smartly">
+        I liked to dress smartly. Though I have a great pair of jeans that are my everyday wear.
+        You won't catch me wearing a onezie to the supermarket :D.
+      </span>
+    </p>
+    <p>
+       I'm 48, 5'11" and physically fit. I love the outdoors and volunteering. I am
+      looking for a Muslim women who shares my values and interests. 
+      No I'm not AI. You can find all my links on the contact page. 
+      <!--  -->
+      <label for="ben-nevis" class="margin-toggle">&#8853;</label>
+      <input type="checkbox" id="ben-nevis" class="margin-toggle"/>
+      <span class="marginnote">
+        <img src="./ben-nevis-summit.jpeg" alt="Imran at Ben Nevis summit">
+        I love the outdoors. I have climbed Ben Nevis, the highest mountain in the UK.
+        This is me at the summit last year. I reached the top in 2 hours and 30 minutes.
+      </span>
+    </p>
+    <p>
+      My friends describe me as a good listener, empathetic, and a loyal friend.
+      I value honesty and communication in any relationship.
+      <!--  -->
+      <label for="selfie" class="margin-toggle">&#8853;</label>
+      <input type="checkbox" id="selfie" class="margin-toggle"/>
+      <span class="marginnote">
+        <img src="./selfie.jpeg" alt="self portrait of Imran">
+        A moment to myself during a group hike in the Peak District, UK.
+      </span>
+    </p>
+    <p>
+       If you think we might be compatible,
+      feel free to reach out to me through the contact information provided below.
+      <!--  -->
+      <label for="selfie-in-the-sun" class="margin-toggle">&#8853;</label>
+      <input type="checkbox" id="selfie-in-the-sun" class="margin-toggle"/>
+      <span class="marginnote">
+        <img src="./selfie-in-the-sun.jpeg" alt="self portrait of Imran in the sun">
+        A small pleasure of mine is an early morning walk in the sun. I love the warmth of the sun on my face.
+      </span>
+    </p>
+   
+  </section>
+  <section>
+    <h2>What People Are Saying</h2>
+    <div class="epigraph">
+          <blockquote>
+            <p>He doesn't have any bad habits.</p>
+            <footer>As said to my mother by my Ex</footer>
+          </blockquote>
+          <blockquote>
+            <p>He has a good heart and works hard.</p>
+            <footer>A friend</footer>
+          </blockquote>
+          <blockquote>Imran has a wicked sense of humor.
+            <footer>Ex Project Manager</footer>
+          </blockquote>
+        </div>
+  </section>
+  <section class="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <details>
+    <summary>Are you a real person, or AI?</summary>
+    <p>Very real. No bots here — you can verify via the links on my contact page.</p>
+  </details>
+
+  <details>
+    <summary>Why a website instead of dating apps?</summary>
+    <p>The apps never felt like me. This seemed like a more honest way to say who I am.</p>
+  </details>
+
+  <details>
+    <summary>What are you looking for?</summary>
+    <p>A Muslim woman who shares my values — family, faith, and a love of the outdoors.</p>
+  </details>
+</section>
+</MainLayout>
+<style>
+  /* Assumes tufte.css is already loaded */
+
+.faq {
+  max-width: 55%;           /* keep the same measure as your prose */
+}
+
+.faq details {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);   /* hairline rule, not a box */
+  padding: 0.6rem 0;
+}
+
+.faq details:last-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;                     /* kill default triangle */
+  font-weight: 400;
+}
+
+.faq summary::-webkit-details-marker { display: none; }  /* Safari triangle */
+
+/* Quiet + / − indicator, set in the same typeface */
+.faq summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+  margin-left: -1.2em;                  /* hangs in the margin, Tufte-style */
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.faq details[open] summary::before { content: "\2212"; } /* minus sign */
+
+.faq details[open] summary {
+  font-style: italic;                   /* state change via type, not color */
+}
+
+.faq details p {
+  margin: 0.5rem 0 0 1.2em;             /* answer indented under the question */
+  color: #333;
+}
+</style>

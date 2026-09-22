@@ -8,7 +8,9 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.imran-nazir.com", // Update with your actual Netlify URL
-  integrations: [mdx(),preact(),sitemap(),],
+  integrations: [mdx(),preact(),sitemap({
+      filter: (page) => page !== 'https://imran-nazir.com/date-imran/',
+    }),],
   image: {
     responsiveStyles: true,
   },
