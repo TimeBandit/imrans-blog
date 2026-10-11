@@ -104,6 +104,13 @@ const contact = siteConfig.contactInfo;
   max-width: 55%;           /* keep the same measure as your prose */
 }
 
+/* Tufte's demo image is wider than the note, so max-width:100% always fills it and the
+   caption wraps below. Ours are narrower at wide viewports, leaving room beside them. */
+.marginnote img {
+  display: block;
+  width: 100%;
+}
+
 @media (max-width: 760px) {
   .faq {
     max-width: 100%;                    /* match section > p on small screens */
