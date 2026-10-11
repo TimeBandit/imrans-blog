@@ -1,37 +1,41 @@
 ---
+import { Image } from 'astro:assets';
 import MainLayout from "../../layouts/MainLayout.astro";
 import siteConfig from "../../site.config";
+import dressedSmart from "../../assets/images/date-imran/dressed-smart.jpeg";
+import benNevisSummit from "../../assets/images/date-imran/ben-nevis-summit.jpeg";
+import selfie from "../../assets/images/date-imran/selfie.jpeg";
+import selfieInTheSun from "../../assets/images/date-imran/selfie-in-the-sun.jpeg";
+
 const contact = siteConfig.contactInfo;
 ---
 
 <MainLayout
-  activePage="contact"
+  noindex
   pageTitle={siteConfig.title + " | Date Imran"}
+  description="I'm Imran, 48, outdoorsy and single. The apps aren't for me, so here's a more honest way to say who I am."
 >
   <section>
-    <span aria-hidden="true"></span>
-    <h1>About Me</h1>
+    <h1>Date Imran</h1>
     <p>
       Hi, I'm Imran. I happen to be single at the moment. I want to find someone
-      but the apps are not for me. I came across this unual approach so here I am.
-     <!--  -->
-      <label for="dressed-smart" class="margin-toggle">&#8853;</label>
-      <input type="checkbox" id="dressed-smart" class="margin-toggle"/>
+      but the apps are not for me. I came across this unusual approach so here I am.
+      <label for="dressed-smart" class="margin-toggle" aria-hidden="true">&#8853;</label>
+      <input type="checkbox" id="dressed-smart" class="margin-toggle" aria-label="Show photo: Imran dressed smartly"/>
       <span class="marginnote">
-        <img src="./dressed-smart.jpeg" alt="self portrait of Imran dressed smartly">
-        I liked to dress smartly. Though I have a great pair of jeans that are my everyday wear.
-        You won't catch me wearing a onezie to the supermarket :D.
+        <Image src={dressedSmart} alt="self portrait of Imran dressed smartly" width={300} />
+        I like to dress smartly. Though I have a great pair of jeans that are my everyday wear.
+        You won't catch me wearing a onesie to the supermarket :D.
       </span>
     </p>
     <p>
-       I'm 48, 5'11" and physically fit. I love the outdoors and volunteering. I am
-      looking for a Muslim women who shares my values and interests. 
-      No I'm not AI. You can find all my links on the contact page. 
-      <!--  -->
-      <label for="ben-nevis" class="margin-toggle">&#8853;</label>
-      <input type="checkbox" id="ben-nevis" class="margin-toggle"/>
+      I'm 48, 5'11" and physically fit. I love the outdoors and volunteering. I am
+      looking for a Muslim woman who shares my values and interests.
+      No I'm not AI. You can find all my links on the contact page.
+      <label for="ben-nevis" class="margin-toggle" aria-hidden="true">&#8853;</label>
+      <input type="checkbox" id="ben-nevis" class="margin-toggle" aria-label="Show photo: Imran at the Ben Nevis summit"/>
       <span class="marginnote">
-        <img src="./ben-nevis-summit.jpeg" alt="Imran at Ben Nevis summit">
+        <Image src={benNevisSummit} alt="Imran at Ben Nevis summit" width={300} />
         I love the outdoors. I have climbed Ben Nevis, the highest mountain in the UK.
         This is me at the summit last year. I reached the top in 2 hours and 30 minutes.
       </span>
@@ -39,42 +43,40 @@ const contact = siteConfig.contactInfo;
     <p>
       My friends describe me as a good listener, empathetic, and a loyal friend.
       I value honesty and communication in any relationship.
-      <!--  -->
-      <label for="selfie" class="margin-toggle">&#8853;</label>
-      <input type="checkbox" id="selfie" class="margin-toggle"/>
+      <label for="selfie" class="margin-toggle" aria-hidden="true">&#8853;</label>
+      <input type="checkbox" id="selfie" class="margin-toggle" aria-label="Show photo: Imran on a group hike"/>
       <span class="marginnote">
-        <img src="./selfie.jpeg" alt="self portrait of Imran">
+        <Image src={selfie} alt="self portrait of Imran" width={300} />
         A moment to myself during a group hike in the Peak District, UK.
       </span>
     </p>
     <p>
-       If you think we might be compatible,
+      If you think we might be compatible,
       feel free to reach out to me through the contact information provided below.
-      <!--  -->
-      <label for="selfie-in-the-sun" class="margin-toggle">&#8853;</label>
-      <input type="checkbox" id="selfie-in-the-sun" class="margin-toggle"/>
+      <label for="selfie-in-the-sun" class="margin-toggle" aria-hidden="true">&#8853;</label>
+      <input type="checkbox" id="selfie-in-the-sun" class="margin-toggle" aria-label="Show photo: Imran in the morning sun"/>
       <span class="marginnote">
-        <img src="./selfie-in-the-sun.jpeg" alt="self portrait of Imran in the sun">
+        <Image src={selfieInTheSun} alt="self portrait of Imran in the sun" width={300} />
         A small pleasure of mine is an early morning walk in the sun. I love the warmth of the sun on my face.
       </span>
     </p>
-   
   </section>
   <section>
     <h2>What People Are Saying</h2>
     <div class="epigraph">
-          <blockquote>
-            <p>He doesn't have any bad habits.</p>
-            <footer>As said to my mother by my Ex</footer>
-          </blockquote>
-          <blockquote>
-            <p>He has a good heart and works hard.</p>
-            <footer>A friend</footer>
-          </blockquote>
-          <blockquote>Imran has a wicked sense of humor.
-            <footer>Ex Project Manager</footer>
-          </blockquote>
-        </div>
+      <blockquote>
+        <p>He doesn't have any bad habits.</p>
+        <footer>As said to my mother by my Ex</footer>
+      </blockquote>
+      <blockquote>
+        <p>He has a good heart and works hard.</p>
+        <footer>A friend</footer>
+      </blockquote>
+      <blockquote>
+        <p>Imran has a wicked sense of humor.</p>
+        <footer>Ex Project Manager</footer>
+      </blockquote>
+    </div>
   </section>
   <section class="faq">
   <h2>Frequently Asked Questions</h2>
@@ -102,13 +104,33 @@ const contact = siteConfig.contactInfo;
   max-width: 55%;           /* keep the same measure as your prose */
 }
 
+@media (max-width: 760px) {
+  .faq {
+    max-width: 100%;                    /* match section > p on small screens */
+  }
+
+  /* tufte.css hides the checkbox; keep it focusable so keyboard users can open the photos */
+  input.margin-toggle {
+    display: inline-block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  label.margin-toggle:has(+ input.margin-toggle:focus-visible) {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
 .faq details {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);   /* hairline rule, not a box */
+  border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent);   /* hairline rule, not a box */
   padding: 0.6rem 0;
 }
 
 .faq details:last-of-type {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
 }
 
 .faq summary {
@@ -125,7 +147,7 @@ const contact = siteConfig.contactInfo;
   display: inline-block;
   width: 1.2em;
   margin-left: -1.2em;                  /* hangs in the margin, Tufte-style */
-  color: rgba(0, 0, 0, 0.4);
+  color: color-mix(in srgb, currentColor 40%, transparent);
 }
 
 .faq details[open] summary::before { content: "\2212"; } /* minus sign */
@@ -136,6 +158,5 @@ const contact = siteConfig.contactInfo;
 
 .faq details p {
   margin: 0.5rem 0 0 1.2em;             /* answer indented under the question */
-  color: #333;
 }
 </style>

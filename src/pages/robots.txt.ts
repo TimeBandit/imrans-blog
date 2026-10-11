@@ -3,7 +3,7 @@ import { withBase } from "../utils/helpers";
 
 const getRobotsTxt = (sitemapURL: URL) => `\
 User-agent: *
-Disallow: /date-imran
+Allow: /
 
 Sitemap: ${sitemapURL.href}
 `;

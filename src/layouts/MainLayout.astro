@@ -10,6 +10,7 @@ type Props = {
   activePage?: string;
   showSubscribeForm?: boolean;
   description?: string;
+  noindex?: boolean;
 };
 
 const {
@@ -17,6 +18,7 @@ const {
   activePage = "",
   showSubscribeForm = true,
   description = siteConfig.description,
+  noindex = false,
 } = Astro.props;
 ---
 
@@ -27,6 +29,7 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow, noarchive, noimageindex" />}
     <link rel="icon" href="/space-ahead-logo.png" />
     <link rel="stylesheet" href="/tufte.css"/>
     <link rel="sitemap" href={withBase("/sitemap-index.xml")} />

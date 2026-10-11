@@ -9,7 +9,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://www.imran-nazir.com", // Update with your actual Netlify URL
   integrations: [mdx(),preact(),sitemap({
-      filter: (page) => page !== 'https://imran-nazir.com/date-imran/',
+      filter: (page) => !new URL(page).pathname.startsWith('/date-imran'),
     }),],
   image: {
     responsiveStyles: true,
