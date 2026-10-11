@@ -1,5 +1,5 @@
 ---
-title: How We Integrated Hullabalook’s Interactive Shopping Experience into a Leading E-Commerce Platform
+title: Hullabalook Room Planner Integration
 author: "Imran Nazir"
 description: A Case Study on Elevating Furniture Shopping with Typescript, AWS & Iframes
 pubDate: 2024-04-24
@@ -101,9 +101,9 @@ Boom—seamless data transfer. Customers could easily add their curated "room" s
 
 ## The Results
 
-- ✅ Increased average cart size among users who engaged with Room Planner.
-- ✅ Improved bounce rates from product detail pages.
-- ✅ Zero reported performance issues post-launch.
+- Increased average cart size among users who engaged with Room Planner.
+- Improved bounce rates from product detail pages.
+- Zero reported performance issues post-launch.
 
 ## Final Thoughts
 
